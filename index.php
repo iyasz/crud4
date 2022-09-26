@@ -91,6 +91,7 @@ if (isset($_POST['submit'])) {
                                     <th>No Telp</th>
                                     <th>Asal Sekolah</th>
                                     <th>Alamat</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -103,6 +104,13 @@ if (isset($_POST['submit'])) {
                                         <td> <?= $selects['telepon'] ?> </td>
                                         <td> <?= $selects['asal_sekolah'] ?> </td>
                                         <td> <?= $selects['alamat'] ?> </td>
+                                        <td class="justify-content-center gap-1 d-flex">
+                                            <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                            <form action="" method="post">
+                                                <input type="hidden" value="<?= $selects['id'] ?>" name="id">
+                                                <button class="btn btn-danger btn-sm">Hapus</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
