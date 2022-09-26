@@ -7,6 +7,21 @@ $data = $conn->query("SELECT * FROM siswa WHERE id = '$id' ");
 
 $datas = mysqli_fetch_assoc($data);
 
+if (isset($_POST['submit'])) {
+    $nama = htmlspecialchars($_POST['nama']);
+    $nis = htmlspecialchars($_POST['nis']);
+    $telepon = htmlspecialchars($_POST['telepon']);
+    $sekolah = htmlspecialchars($_POST['sekolah']);
+    $alamat = htmlspecialchars($_POST['alamat']);
+
+    $update = $conn->query("UPDATE siswa SET nama = '$nama', nis = '$nis', telepon = '$telepon', asal_sekolah = '$sekolah', alamat = '$alamat'");
+
+    if ($update) {
+        echo '<script>alert("Data Berhasil Di Update")
+                      location.replace("index.php")</script>';
+    }
+}
+
 
 ?>
 
