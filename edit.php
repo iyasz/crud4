@@ -42,22 +42,22 @@ $datas = mysqli_fetch_assoc($data);
                             </div>
                             <div class="mb-3">
                                 <label for="nis">NIS</label>
-                                <input type="text" autocomplete="off" placeholder="Masukan NIS" name="nis" id="nis" class="form-control">
+                                <input type="text" autocomplete="off" placeholder="Masukan NIS" name="nis" id="nis" class="form-control" value="<?= $datas['nis'] ?>">
                             </div>
-                            <div class="mb-3">
+                            <div class=" mb-3">
                                 <label for="telepon">No Telp</label>
-                                <input type="text" autocomplete="off" placeholder="Masukan No Telepon" name="telepon" id="telepon" class="form-control">
+                                <input type="text" autocomplete="off" placeholder="Masukan No Telepon" name="telepon" id="telepon" class="form-control" value="<?= $datas['telepon'] ?>">
                             </div>
-                            <div class="mb-3">
+                            <div class=" mb-3">
                                 <label for="sekolah">Asal Sekolah</label>
-                                <input type="text" autocomplete="off" placeholder="Masukan Asal Sekolah" name="sekolah" id="sekolah" class="form-control">
+                                <input type="text" autocomplete="off" placeholder="Masukan Asal Sekolah" name="sekolah" id="sekolah" class="form-control" value="<?= $datas['asal_sekolah'] ?>">
                             </div>
-                            <div class="mb-5">
+                            <div class=" mb-5">
                                 <label for="alamat">Alamat</label>
-                                <input type="text" autocomplete="off" autocomplete="off" placeholder="Masukan Alamat" name="alamat" id="alamat" class="form-control">
+                                <input type="text" autocomplete="off" autocomplete="off" placeholder="Masukan Alamat" name="alamat" id="alamat" class="form-control" value="<?= $datas['alamat'] ?>">
                             </div>
 
-                            <button class="btn btn-primary" type="submit" name="submit">Submit</button>
+                            <button class=" btn btn-primary" type="submit" name="submit">Submit</button>
                             <a href="index.php" class="btn btn-info">Kembali</a>
                         </form>
                     </div>
