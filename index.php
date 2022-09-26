@@ -11,11 +11,13 @@ if (isset($_POST['submit'])) {
     $alamat = htmlspecialchars($_POST['alamat']);
 
     if (empty($nama) or empty($nis) or empty($telepon) or empty($alamat) or empty($sekolah)) {
-        echo '<script>alert("Masukan Data Dengan Lengkap")
+        $it = 1;
+        echo '<script>
                       location.replace("index.php")</script>';
     } else {
         $simpan = $conn->query("INSERT INTO siswa VALUES (NULL, '$nama', '$nis', '$telepon', '$sekolah', '$alamat')");
         if ($simpan) {
+            $it = 1;
             echo '<script>alert("Data Berhasil Di Simpan")
                       location.replace("index.php")</script>';
         }
@@ -43,6 +45,9 @@ if (isset($_POST['hapus'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CRUD TEMPLATE</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css">
+
 </head>
 
 <body>
@@ -130,7 +135,25 @@ if (isset($_POST['hapus'])) {
             </div>
         </div>
     </div>
+
+    <?php
+    if (isset($it)) {
+        echo "<script>
+        iziToast.show({
+            title: 'Hey',
+            message: 'What would you like to add?'
+        })
+            </script>";
+    }
+    ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js"></script>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+
+
 </body>
 
 </html>
