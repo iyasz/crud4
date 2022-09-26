@@ -22,6 +22,16 @@ if (isset($_POST['submit'])) {
     }
 }
 
+if (isset($_POST['hapus'])) {
+    $id = $_POST['id'];
+    $hapus = $conn->query("DELETE FROM siswa WHERE id = '$id'");
+
+    if ($hapus) {
+        echo '<script>alert("Data Berhasil Di Hapus")
+                      location.replace("index.php")</script>';
+    }
+}
+
 ?>
 
 
@@ -108,7 +118,7 @@ if (isset($_POST['submit'])) {
                                             <a href="" class="btn btn-primary btn-sm">Edit</a>
                                             <form action="" method="post">
                                                 <input type="hidden" value="<?= $selects['id'] ?>" name="id">
-                                                <button class="btn btn-danger btn-sm">Hapus</button>
+                                                <button type="submit" name="hapus" class="btn btn-danger btn-sm">Hapus</button>
                                             </form>
                                         </td>
                                     </tr>
