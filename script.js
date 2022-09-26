@@ -1,6 +1,7 @@
-const input = document.getElementsByTagName("input");
+const input = document.getElementById("id");
 const table = document.getElementById("table");
 
-document.addEventListener("keypress", () => {
-  table.innerHTML = "kanjut";
+document.addEventListener("keyup", () => {
+  table.style.textAlign = "center";
+  table.innerHTML = "Hello World!";
 });

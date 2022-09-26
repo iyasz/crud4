@@ -70,7 +70,7 @@ if (isset($_POST['hapus'])) {
                                 <input type="text" autocomplete="off" placeholder="Masukan Nama Lengkap" name="nama" id="nama" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label for="nis">NIS</label>
+                                <label id="input" for="nis">NIS</label>
                                 <input type="text" autocomplete="off" placeholder="Masukan NIS" name="nis" id="nis" class="form-control">
                             </div>
                             <div class="mb-3">
