@@ -97,7 +97,7 @@ if (isset($_POST['hapus'])) {
             <div class="col-lg-11">
                 <div class="card">
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table" id="table">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -152,6 +152,7 @@ if (isset($_POST['hapus'])) {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
+    <script src="script.js"></script>
 
 
 </body>
