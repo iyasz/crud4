@@ -2,15 +2,21 @@
 $conn = mysqli_connect('localhost', 'root', '', 'crud');
 
 if (isset($_POST['submit'])) {
-    $nama == htmlspecialchars($_POST['nama']);
-    $nis == htmlspecialchars($_POST['nis']);
-    $telepon == htmlspecialchars($_POST['telepon']);
-    $alamat == htmlspecialchars($_POST['alamat']);
-    $sekolah == htmlspecialchars($_POST['sekolah']);
+    $nama = htmlspecialchars($_POST['nama']);
+    $nis = htmlspecialchars($_POST['nis']);
+    $telepon = htmlspecialchars($_POST['telepon']);
+    $sekolah = htmlspecialchars($_POST['sekolah']);
+    $alamat = htmlspecialchars($_POST['alamat']);
 
     if (empty($nama) or empty($nis) or empty($telepon) or empty($alamat) or empty($sekolah)) {
         echo '<script>alert("Masukan Data Dengan Lengkap")
                       location.replace("index.php")</script>';
+    } else {
+        $simpan = $conn->query("INSERT INTO siswa VALUES (NULL, '$nama', '$telepon', '$sekolah', '$alamat')");
+        if ($simpan) {
+            echo '<script>alert("Data Berhasil Di Simpan")
+                      location.replace("index.php")</script>';
+        }
     }
 }
 
