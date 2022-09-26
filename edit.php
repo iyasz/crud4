@@ -1,3 +1,16 @@
+<?php
+
+$conn = mysqli_connect('localhost', 'root', '', 'crud');
+$id = $_GET['id'];
+
+$data = $conn->query("SELECT * FROM siswa WHERE id = '$id' ");
+
+$datas = mysqli_fetch_assoc($data);
+
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -25,7 +38,7 @@
                         <form action="" method="post">
                             <div class="mb-3">
                                 <label for="nama">Nama Lengkap</label>
-                                <input type="text" autocomplete="off" placeholder="Masukan Nama Lengkap" name="nama" id="nama" class="form-control">
+                                <input type="text" autocomplete="off" placeholder="Masukan Nama Lengkap" name="nama" id="nama" class="form-control" value="<?= $datas['nama'] ?>">
                             </div>
                             <div class="mb-3">
                                 <label for="nis">NIS</label>
@@ -45,7 +58,7 @@
                             </div>
 
                             <button class="btn btn-primary" type="submit" name="submit">Submit</button>
-                            <button class="btn btn-danger" type="reset">Reset</button>
+                            <a href="index.php" class="btn btn-info">Kembali</a>
                         </form>
                     </div>
                 </div>

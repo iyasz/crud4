@@ -115,7 +115,7 @@ if (isset($_POST['hapus'])) {
                                         <td> <?= $selects['asal_sekolah'] ?> </td>
                                         <td> <?= $selects['alamat'] ?> </td>
                                         <td class="justify-content-center gap-1 d-flex">
-                                            <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                            <a href="edit.php?id=<?= $selects['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
                                             <form action="" method="post">
                                                 <input type="hidden" value="<?= $selects['id'] ?>" name="id">
                                                 <button type="submit" name="hapus" class="btn btn-danger btn-sm">Hapus</button>
