@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
         echo '<script>alert("Masukan Data Dengan Lengkap")
                       location.replace("index.php")</script>';
     } else {
-        $simpan = $conn->query("INSERT INTO siswa VALUES (NULL, '$nama', '$telepon', '$sekolah', '$alamat')");
+        $simpan = $conn->query("INSERT INTO siswa VALUES (NULL, '$nama', '$nis', '$telepon', '$sekolah', '$alamat')");
         if ($simpan) {
             echo '<script>alert("Data Berhasil Di Simpan")
                       location.replace("index.php")</script>';
